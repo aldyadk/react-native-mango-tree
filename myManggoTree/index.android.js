@@ -11,11 +11,12 @@ import { Provider } from 'react-redux'
 import store from './src/store/index.js'
 import Welcome from './src/components/welcome'
 import Tree from './src/components/tree'
+import Over from './src/components/over'
 
 const MyNavigator = StackNavigator({
   Welcome: { screen: Welcome },
   Tree: { screen: Tree },
-  // Over: { screen: Over },
+  Over: { screen: Over },
 });
 
 class myManggoTree extends React.Component {
