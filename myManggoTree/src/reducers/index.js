@@ -3,6 +3,9 @@ const initialState = {
   tree: '',
   loggedUser:'',
   loggedTree: '',
+  treeAge: 0,
+  fruits: 0,
+  healthyStatus: true,
   data: []
 }
 
@@ -16,8 +19,14 @@ export default (state = initialState, action)=>{
   if(action.type === 'SUBMIT_USER'){
     return {...state, loggedUser: action.payload}
   }
-  if(action.type === 'SUBMIT_Tree'){
+  if(action.type === 'SUBMIT_TREE'){
     return {...state, loggedTree: action.payload}
+  }
+  if(action.type === 'NEW_YEAR'){
+    return {...state, treeAge: state.treeAge+1}
+  }
+  if(action.type === 'HARVEST'){
+    return {...state, fruits: 0}
   }
   // if(action.type === 'LOAD_DATA'){
   //   return {...state, data: action.payload}

@@ -26,6 +26,17 @@ export const treeEdit = (tree) => {
   };
 }
 
+export const newYear = () => {
+  return {
+    type: 'NEW_YEAR',
+  };
+}
+
+export const harvest = () => {
+  return {
+    type: 'HARVEST',
+  };
+}
 // export const dataLoad = (data) => {
 //   return {
 //     type: 'LOAD_DATA',

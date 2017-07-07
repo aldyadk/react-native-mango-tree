@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   TextInput,
   Button,
@@ -16,7 +14,7 @@ class Welcome extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{fontSize: 40, textAlign: 'center', margin: 10,}}>
+        <Text style={{fontSize: 40, textAlign: 'center', margin: 10, color:'white'}}>
           Welcome!
         </Text>
         <TextInput
@@ -38,6 +36,7 @@ class Welcome extends Component {
             this.props.editUser('')
             this.props.submitTree(this.props.tree)
             this.props.editTree('')
+            this.props.navigation.navigate('Tree')
           }
         }
         title='Start'/>

@@ -6,9 +6,4 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'teal',
   },
-  welcome: {
-    fontSize: 30,
-    textAlign: 'center',
-    margin: 10,
-  },
 });

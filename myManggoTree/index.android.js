@@ -8,12 +8,13 @@ import {
 import { StackNavigator } from 'react-navigation'
 import { Provider } from 'react-redux'
 
-import Welcome from './src/components/welcome'
 import store from './src/store/index.js'
+import Welcome from './src/components/welcome'
+import Tree from './src/components/tree'
 
 const MyNavigator = StackNavigator({
   Welcome: { screen: Welcome },
-  // Groot: { screen: Groot },
+  Tree: { screen: Tree },
   // Over: { screen: Over },
 });
 
