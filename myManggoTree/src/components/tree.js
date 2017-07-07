@@ -13,10 +13,16 @@ import { newYear } from '../actions'
 
 class Tree extends Component {
   render() {
+    var source = ''
+    if(this.props.treeAge>0){
+      source = '../assets/1.png'
+    } else {
+      source = '../assets/0.png'
+    }
     return (
       <View style={styles.container}>
         <Text style={{alignSelf:'flex-end',fontSize: 25, color:'white', textAlign: 'center'}}>
-          {`( ${this.props.fruits} )`}
+          {`Fruits ( ${this.props.fruits} )`}
         </Text>
         <Text style={{fontSize: 25, textAlign: 'center', color:'white'}}>
           {'This is '}
@@ -33,13 +39,13 @@ class Tree extends Component {
         </Text>
         <Image
         accessibilityLabel="tree"
-        style={{width:200,height:200}}
+        style={{width:300,height:300}}
         source={require('../assets/0.png')} />
         <Button
         color='green'
         onPress={
           ()=>{
-            this.props.emulate()
+            this.props.emulate(this.props.treeAge,this.props.matureAge,this.props.maxAge)
           }
         }
         title='Emulate'/>
@@ -62,6 +68,8 @@ const mapStateToProps = (state) => {
   return {
     loggedTree: state.loggedTree,
     treeAge: state.treeAge,
+    matureAge: state.matureAge,
+    maxAge: state.maxAge,
     fruits: state.fruits,
     healthyStatus: state.healthyStatus,
   };
@@ -69,7 +77,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    emulate: () => dispatch(newYear()),
+    emulate: (age1,age2,age3) => dispatch(newYear(age1,age2,age3)),
     harvest: () => dispatch(harvest()),
   }
 }

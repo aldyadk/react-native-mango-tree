@@ -26,9 +26,14 @@ export const treeEdit = (tree) => {
   };
 }
 
-export const newYear = () => {
+export const newYear = (treeAge,matureAge,maxAge) => {
+  let thisYearFruits = 0
+  if(treeAge>=matureAge){
+    thisYearFruits = Math.ceil(Math.random() * 25)
+  }
   return {
     type: 'NEW_YEAR',
+    payload: thisYearFruits
   };
 }
 

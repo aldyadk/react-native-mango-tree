@@ -6,6 +6,8 @@ const initialState = {
   treeAge: 0,
   fruits: 0,
   healthyStatus: true,
+  matureAge: 17,
+  maxAge: 25,
   data: []
 }
 
@@ -23,7 +25,7 @@ export default (state = initialState, action)=>{
     return {...state, loggedTree: action.payload}
   }
   if(action.type === 'NEW_YEAR'){
-    return {...state, treeAge: state.treeAge+1}
+    return {...state, treeAge: state.treeAge+1, fruits: state.fruits+action.payload}
   }
   if(action.type === 'HARVEST'){
     return {...state, fruits: 0}
